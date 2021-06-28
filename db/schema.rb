@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2021_06_28_192542) do
     t.decimal "total_value"
     t.decimal "total_return"
     t.decimal "total_return_percentage"
+    t.integer "portfolio_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(version: 2021_06_28_192542) do
     t.string "trade_type"
     t.decimal "price"
     t.integer "quantity"
+    t.integer "portfolio_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

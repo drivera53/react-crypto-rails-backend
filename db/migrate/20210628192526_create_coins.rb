@@ -23,7 +23,7 @@ class CreateCoins < ActiveRecord::Migration[6.1]
       t.decimal :total_value
       t.decimal :total_return
       t.decimal :total_return_percentage
-
+      t.integer :portfolio_id
       t.timestamps
     end
   end

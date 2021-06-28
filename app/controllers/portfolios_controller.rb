@@ -10,6 +10,15 @@ class PortfoliosController < ApplicationController
 
   # GET /portfolios/1
   def show
+    total_value = 0
+    @portfolio.coins.each do |coin|
+      coin.fetchCoinUpdatePriceData
+      coin.totalReturnsCalculation
+      total_value = total_value + coin.total_value
+    end
+    @portfolio.total_value = total_value
+    @portfolio.totalReturnsCalculation
+    @portfolio.save
     render json: @portfolio
   end
 

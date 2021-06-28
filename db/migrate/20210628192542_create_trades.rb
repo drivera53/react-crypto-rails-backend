@@ -6,7 +6,7 @@ class CreateTrades < ActiveRecord::Migration[6.1]
       t.string :trade_type
       t.decimal :price
       t.integer :quantity
-
+      t.integer :portfolio_id
       t.timestamps
     end
   end
