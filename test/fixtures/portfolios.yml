@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  initial_balance: 9.99
+  total_value: 9.99
+  buying_power: 9.99
+  total_return: 9.99
+  total_return_percentage: 9.99
+
+two:
+  name: MyString
+  description: MyString
+  initial_balance: 9.99
+  total_value: 9.99
+  buying_power: 9.99
+  total_return: 9.99
+  total_return_percentage: 9.99
