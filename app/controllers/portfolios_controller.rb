@@ -10,16 +10,24 @@ class PortfoliosController < ApplicationController
 
   # GET /portfolios/1
   def show
-    total_value = 0
+    total_value = @portfolio.buying_power
     @portfolio.coins.each do |coin|
       coin.fetchCoinUpdatePriceData
       coin.totalReturnsCalculation
       total_value = total_value + coin.total_value
     end
+    # Handling coin Deletion
+    @portfolio.coins.each do |coin|
+      coin.deleteCoinIfZero
+    end
+
     @portfolio.total_value = total_value
     @portfolio.totalReturnsCalculation
-    @portfolio.save
-    render json: @portfolio
+    if @portfolio.save
+      render json: @portfolio
+    else
+      render json: {error: 'Error fetching Portfolio'}
+    end
   end
 
   # POST /portfolios

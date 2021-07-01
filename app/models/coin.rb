@@ -34,4 +34,14 @@ class Coin < ApplicationRecord
         self.total_return_percentage = ((self.current_price - self.average_cost)/self.average_cost) * 100 
         self.save
     end
+
+    def deleteCoinIfZero
+        if self.quantity == 0
+            puts("Yeah it's ZEROOOOOOO")
+            self.delete
+            self.save
+        else
+            puts("No it's not ZEROOOOOOOOO")
+        end
+    end
 end

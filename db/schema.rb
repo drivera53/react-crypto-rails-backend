@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 2021_06_28_192542) do
     t.decimal "price"
     t.integer "quantity"
     t.integer "portfolio_id"
+    t.string "symbol"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
